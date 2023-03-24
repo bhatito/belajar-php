@@ -41,27 +41,27 @@ $tunjangan = 4000000 *0.2;break;
         if ($gol == 1 && $status =='lajang')
             $tunjangan_keluarga = '0';
         elseif ($gol == 1 && $status =='menikah dan mempunyai anak 2')
-            $tunjangan_keluarga = 20000000 *5/100;
+            $tunjangan_keluarga = $gapok *5/100;
             elseif ($gol == 1 && $status =='menikah dan anak antara 3-5')
-            $tunjangan_keluarga = 20000000 *10/100;
+            $tunjangan_keluarga = $gapok *10/100;
         elseif($gol == 2 && $status =='lajang')
             $tunjangan_keluarga = '0';
             elseif ($gol == 2 && $status =='menikah dan mempunyai anak 2')
-            $tunjangan_keluarga = 15000000 *5/100;
+            $tunjangan_keluarga = $gapok *5/100;
             elseif ($gol == 2 && $status =='menikah dan mempunyai anak 3-5')
-            $tunjangan_keluarga = 15000000 *10/100;
+            $tunjangan_keluarga = $gapok *10/100;
         elseif($gol == 3 && $status =='lajang')
             $tunjangan_keluarga = '0';
             elseif ($gol == 3 && $status =='menikah dan mempunyai anak 2')
-            $tunjangan_keluarga = 10000000 *5/100;
+            $tunjangan_keluarga = $gapok *5/100;
             elseif ($gol == 3 && $status =='menikah dan mempunyai anak 3-5')
-            $tunjangan_keluarga = 10000000 *10/100;
+            $tunjangan_keluarga = $gapok *10/100;
         elseif($gol == 4 && $status =='lajang')
             $tunjangan_keluarga = '0';
             elseif ($gol == 4 && $status =='menikah dan mempunyai anak 2')
-            $tunjangan_keluarga = 4000000 *5/100;
+            $tunjangan_keluarga = $gapok *5/100;
             elseif ($gol == 4 && $status =='menikah dan mempunyai anak 3-5')
-            $tunjangan_keluarga = 4000000 *10/100;
+            $tunjangan_keluarga = $gapok *10/100;
 
 //ngitung gaji 
 switch ($gol)
@@ -106,10 +106,6 @@ case 3: $hasil=$hitung- $zakat; break;
 case 4: $hasil=$hitung- $zakat; break;
     default;
 }
-
-
-
-
 
 echo "Gaji Pokok : $gapok <br>
 Tunjangan : $tunjangan <br>
