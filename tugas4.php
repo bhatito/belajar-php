@@ -15,7 +15,7 @@ $m8 = ['NIM'=>'01111028', 'nama'=>'Bunu', 'nilai'=>28];
 3. Buat predikat dari nilai menggunakan switch case
 */
 //array asossiative
-$mahasiswa = [$m1,$m3,$m4,$m5,$m6,$m7,$m8];
+$mahasiswa = [$m1,$m2,$m3,$m4,$m5,$m6,$m7,$m8];
 $ar_judul = ['No','NIM','Nama','Nilai','Grade','Predikat'];
 //fungsi-fungsi sederhana
 $jumlah_data = count($mahasiswa);
