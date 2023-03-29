@@ -7,6 +7,12 @@
     <title>Document</title>
 </head>
 <body>
+<?php
+$ar_prodi = ["SI"=>"Sistem Informasi", "TI"=>"Teknik Informatika","ILKOM"=>"Ilmu Komputer","TE"=>"Teknik Elektro"];
+
+$ar_skill = ["HTML"=>10,"CSS"=>10, "Javascript"=>20, "RWD Bootstrap"=>20, "PHP"=>30, "MySQL"=>30,"Laravel"=>40];
+$domisili = ["Jakarta","Bandung","Bekasi","Malang","Surabaya", "lainnya"];
+?>
 <fieldset style="background-color:aquamarine;">
     <legend>Form Registrasi Kelompok Belajar</legend>
     <table>
@@ -37,27 +43,27 @@
                 </td>
             </tr>
             <tr>
-                <td> Program Studi</td>
-                <td>
-                    <select name="prodi" id="color">
-                        <option value="">--- Choose a Program Studi ---</option>
-                        <option value="SI">Sistem Informasi</option>
-                        <option value="TI">Teknik Informatika</option>
-                        <option value="ILKOM">Ilmu Komputer</option>
-                        <option value="TE">Teknik Elektro</option>
-                    </select>
+                <td>Program Studi: </td>
+                <td> 
+                    <select name="domisili">
+                        <?php 
+
+                        foreach($domisili as $d){
+                            ?>
+                            <option value="<?= $d ?>"><?= $d ?></option>
+                       <?php } ?>
+                        </select>
                 </td>
             </tr>
             <tr>
-                <td>Skill </td>
-                <td>
-                <input type="checkbox" name="skill[]" alt="checkbox" value="HTML" /> HTML, Skor:10 
-                <input type="checkbox" name="skill[]" alt="checkbox" value="CSS" /> CSS, Skor:10 
-                <input type="checkbox" name="skill[]" alt="checkbox" value="Javascript" /> Javascript, Skor:20  
-                <input type="checkbox" name="skill[]" alt="checkbox" value="RWD Bootstrap" /> RWD Bootstrap, Skor:20 
-                <input type="checkbox" name="skill[]" alt="checkbox" value="PHP" /> PHP, Skor:30 
-                <input type="checkbox" name="skill[]" alt="checkbox" value="MySQL" /> MySQL, Skor:30 
-                <input type="checkbox" name="skill[]" alt="checkbox" value="Laravel" /> Laravel, Skor:40 
+                <td>Skill Programming : </td>
+                <td> 
+                    <?php 
+                    foreach ($ar_skill as $skill => $s){
+                        ?>
+                    <input type="checkbox" name="skill[]" value="<?= $skill ?>" ><?= $skill ?>
+
+                    <?php } ?>
                 </td>
             </tr>
             <tr>
@@ -90,13 +96,13 @@ if(isset($_POST['proses'])){
     $nim = $_POST['nim'];
     $nama = $_POST['nama'];
     $jk = $_POST['jk'];
-    $prodi = $_POST['prodi'];
+    $domisili = $_POST['domisili'];
     $skill = $_POST['skill'];
     $proses = $_POST['proses'];
     echo "Nim: $nim <br>" ;
     echo "Nama: $nama <br>" ;
     echo "Jenis Kelamin: $jk <br>" ;
-    echo "Program Studi: $prodi <br>" ;
+    echo "Program Studi: $domisili <br>" ;
     echo "Skill :";
     foreach($_POST['skill'] as $item){  
     echo $item .",";
